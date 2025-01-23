@@ -1,0 +1,21 @@
+{
+  "name": "playwrightci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "stage": "set ENV=stage&& npx playwright test --workers 6",
+    "stage-linux": "ENV=stage&& npx playwright test --workers 6",
+    "dev": "set ENV=dev&& npx playwright test --workers 6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.9"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
