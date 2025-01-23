@@ -37,7 +37,7 @@ pipeline {
         stage('Run Playwright Tests') {
             steps {
                 bat """
-                npm run "${params.ENVIRONMENT}"
+                npm run "${ENV}"
                 """
             }
         }
