@@ -41,6 +41,18 @@ pipeline {
                 """
             }
         }
+        stage('Archive and Publish Report') {
+            steps {
+                archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
+                publishHTML(target: [
+                    allowMissing: false,
+                    keepAll: true,
+                    reportDir: 'playwright-report',
+                    reportFiles: 'index.html',
+                    reportName: 'Playwright Test Report'
+                ])
+            }
+        }
     }
 
     post {
